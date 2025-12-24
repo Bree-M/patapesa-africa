@@ -10,7 +10,16 @@ export default function Contact() {
             
             <div className="contact-item">
               <h4>Email</h4>
-              <p>hello@patapesa.africa</p>
+              <p>info@patapesa.africa</p>
+              <p>+254 700 000 000</p>
+              <p><strong>Physical Address</strong></p>
+              <p>TUWORK COWORKING NAIROBI.</p>
+              <p>Olenguruone Ave,Lavington,Nairobi</p>
+              <p><strong>Mailing Address</strong></p>
+              <p>P.O Box 17888 -00100</p>
+              <p>NAIROBI,KENYA</p>
+
+            
             </div>
             
             <div className="contact-item">
