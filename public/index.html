@@ -1,14 +1,27 @@
+<!-- public/index.html - FINAL SEO BASE (December 24, 2025) -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/patapesa-logo.png" />
+    <link rel="icon" type="image/png" href="/patapesa-logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PataPesa Africa - Smart Financial Access Platform</title>
-    <meta name="description" content="Access verified financial services, compare providers, and connect instantly. Powered by PesaDirect™ - secure, non-custodial payments." />
+    
+    <!-- DEFAULT SEO (overridden per page via Helmet in components) -->
+    <title>PataPesa Africa </title>
+    <meta name="description" content="Secure, neutral platform connecting users to verified financial and wellness providers across Africa. Non-custodial. Compliant. Transparent." />
+    
+    <!-- ROBOTS -->
+    <meta name="robots" content="index, follow" />
+    
+    <!-- PERFORMANCE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" as="style" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    
+    <script type="module" src="/src/main.jsx"></script>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

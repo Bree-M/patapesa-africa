@@ -1,3 +1,4 @@
+// src/App.jsx - FINAL WITH PAGE OFFSET PROTECTION
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -13,24 +14,28 @@ import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import DataProtection from "./pages/DataProtection";
 import Compliance from "./pages/Compliance";
+import CookiePolicy from "./pages/CookiePolicy";
+import Features from "./pages/Features";
 
 export default function App() {
   return (
     <>
       <Navbar />
-      <main>
+      <main className="main-content">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/how-it-works" element={<HowItWorks />} />
           <Route path="/providers" element={<Providers />} />
           <Route path="/security" element={<Security />} />
+          <Route path="/features" element={<Features />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/data-protection" element={<DataProtection />} />
           <Route path="/compliance" element={<Compliance />} />
+          <Route path="/cookie-policy" element={<CookiePolicy />} />
         </Routes>
       </main>
       <Footer />
