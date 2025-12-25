@@ -136,7 +136,7 @@ export default function About() {
               <img src="/team-cto.jpg" alt="BW" className="leader-photo" />
               <h3>Brenda Wairimu</h3>
               <p className="role">Lead Backend Engineer</p>
-              <p>leads the core API development and maintains secure provider integrations. She architected our robust, scalable backend system designed for bank-grade reliability and speed.</p>
+              <p>Leads the core API development and maintains secure provider integrations. She architected our robust, scalable backend system designed for bank-grade reliability and speed.</p>
               <a
                 href="https://linkedin.com/in/sarahm"
                 target="_blank"
