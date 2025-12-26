@@ -14,6 +14,7 @@ export default function Footer() {
             <p>
               PataPesa Africa connects users to trusted financial and wellness providers across Africa.
             </p>
+            <p><strong>Powered by PesaDirect™</strong></p>
             <p className="tagline">Smart. Secure. Non-Custodial.</p>
 
             {/* DISCLAIMER */}

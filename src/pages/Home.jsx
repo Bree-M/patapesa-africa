@@ -10,8 +10,10 @@ export default function Home() {
         <div className="container">
           <h1>A Smarter Way to Access Financial Services in One Place</h1>
           <p className="sub">
-            PataPesa connects individuals and businesses to verified financial and wellness providers  securely, transparently, and in one place.
+            PataPesa connects individuals and businesses to verified financial and wellness providers  securely, transparently, and in one place.<br />
           </p>
+          <p><strong>Powered by PesaDirect™</strong></p><br />
+
           
           <p className="hero-body">
             <strong>We never hold your funds. You stay in control while accessing savings, loans, insurance, investments, and wellness services from licensed institutions.</strong>

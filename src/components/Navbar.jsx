@@ -73,6 +73,7 @@ export default function Navbar() {
             <li><Link to="/" className={`nav-link ${location.pathname === "/" ? "active" : ""}`}>Home</Link></li>
             <li><Link to="/about" className={`nav-link ${location.pathname === "/about" ? "active" : ""}`}>About</Link></li>
             <li><Link to="/how-it-works" className={`nav-link ${location.pathname === "/how-it-works" ? "active" : ""}`}>How It Works</Link></li>
+            <li><Link to="/features" className={`nav-link ${location.pathname === "/features" ? "active" : ""}`}>Features & Solutions</Link></li>
             <li><Link to="/providers" className={`nav-link ${location.pathname === "/providers" ? "active" : ""}`}>Providers</Link></li>
             <li><Link to="/security" className={`nav-link ${location.pathname === "/security" ? "active" : ""}`}>Security</Link></li>
             <li><Link to="/blog" className={`nav-link ${location.pathname === "/blog" ? "active" : ""}`}>Blog</Link></li>

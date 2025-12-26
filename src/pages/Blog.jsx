@@ -1,104 +1,255 @@
-import PageTitle from "../components/PageTitle";
+// src/pages/Blog.jsx - FINAL PREMIUM INSIGHTS PAGE (December 26, 2025)
+// Authority-building, SEO-optimized, trust-first blog experience
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Blog() {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [email, setEmail] = useState("");
+  const [emailSubmitted, setEmailSubmitted] = useState(false);
+
+  // Sample articles - replace with real content / CMS in production
+  const articles = [
+    {
+      id: 1,
+      title: "How to Choose the Best SACCO in Kenya for 2026",
+      excerpt: "A step-by-step guide to evaluating dividends, governance, digital access, and regulatory compliance when selecting a savings cooperative.",
+      category: "Savings & Money Habits",
+      author: "John Kamau",
+      authorRole: "CEO & Founder",
+      authorImg: "/authors/john.jpg",
+      date: "December 20, 2025",
+      readTime: "6 min read",
+      featured: true,
+      image: "/blog/sacco-guide.jpg",
+    },
+    {
+      id: 2,
+      title: "Money Market Funds vs Treasury Bills: 2026 Outlook",
+      excerpt: "Comparing yields, liquidity, risk, and tax implications in the current high-interest environment.",
+      category: "Investments & Wealth",
+      author: "Sarah Mwangi",
+      authorRole: "Chief Technology Officer",
+      authorImg: "/authors/sarah.jpg",
+      date: "December 18, 2025",
+      readTime: "8 min read",
+      featured: false,
+      image: "/blog/mmf-vs-tbills.jpg",
+    },
+    {
+      id: 3,
+      title: "Building Financial Wellness Programs for Your Team",
+      excerpt: "Practical framework for Kenyan SMEs to implement affordable, high-impact financial education and access programs.",
+      category: "Business & SMEs",
+      author: "David Otieno",
+      authorRole: "Chief Product Officer",
+      authorImg: "/authors/david.jpg",
+      date: "December 15, 2025",
+      readTime: "5 min read",
+      featured: false,
+      image: "/blog/team-wellness.jpg",
+    },
+    {
+      id: 4,
+      title: "Understanding Stablecoins: USDT & USDC in African Contexts",
+      excerpt: "Beginner-friendly explanation of how stablecoins work, use cases, and safe practices for cross-border payments.",
+      category: "PesaFlow™ & Payments",
+      author: "Grace Wanjiku",
+      authorRole: "Partnerships Lead",
+      authorImg: "/authors/grace.jpg",
+      date: "December 12, 2025",
+      readTime: "7 min read",
+      featured: false,
+      image: "/blog/stablecoins.jpg",
+    },
+    {
+      id: 5,
+      title: "New CBK Guidelines: What They Mean for Digital Lenders",
+      excerpt: "Breaking down recent regulatory updates and how compliant platforms like PataPesa are adapting.",
+      category: "Regulation & Policy",
+      author: "John Kamau",
+      authorRole: "CEO & Founder",
+      authorImg: "/authors/john.jpg",
+      date: "December 10, 2025",
+      readTime: "4 min read",
+      featured: false,
+      image: "/blog/cbk-guidelines.jpg",
+    },
+  ];
+
+  const categories = [
+    "all",
+    "Savings & Money Habits",
+    "Investments & Wealth",
+    "PesaDirect™ & Payments",
+    "Business & SMEs",
+    "Regulation & Policy",
+    "Product Updates",
+    "Thought Leadership",
+  ];
+
+  const filteredArticles = articles.filter(article => {
+    const matchesSearch = article.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                         article.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesCategory = selectedCategory === "all" || article.category === selectedCategory;
+    return matchesSearch && matchesCategory;
+  });
+
+  const featuredArticle = articles.find(a => a.featured);
+
+  const handleNewsletter = (e) => {
+    e.preventDefault();
+    if (email.includes("@")) {
+      setEmailSubmitted(true);
+      setTimeout(() => setEmailSubmitted(false), 5000);
+      setEmail("");
+    }
+  };
+
   return (
     <>
-<PageTitle title="Blog" description="Financial literacy, market insights, and case studies." />
-    <section className="container page-content">
-      <h1>Blog & Insights</h1>
-
-      <p className="intro">
-        Education-first resources on financial access, literacy, market trends,
-        and wellness across Africa. Written for individuals, SMEs, and corporates.
-      </p>
-
-      <div className="categories">
-        <a href="#how-to-guides" className="category-tag">How-to Guides</a>
-        <a href="#market-insights" className="category-tag">Market Insights</a>
-        <a href="#case-studies" className="category-tag">Case Studies</a>
-        <a href="#financial-literacy" className="category-tag">Financial Literacy</a>
-        <a href="#sme-corporate" className="category-tag">SME & Corporate Wellness</a>
-      </div>
-
-      <div className="blog-grid">
-        <article className="blog-card" id="how-to-guides">
-          <div className="blog-meta">
-            <span className="category">How-to Guides</span>
-            <span className="date">December 2025</span>
-          </div>
-          <h3>How to Choose the Right SACCO in Kenya</h3>
-          <p>
-            A step-by-step guide to evaluating dividends, governance, digital services,
-            and regulatory compliance when selecting a savings and credit cooperative.
+      {/* 3. HERO SECTION - INSIGHTS THAT EMPOWER */}
+      <section className="blog-hero">
+        <div className="container">
+          <h1>Insights to Help You Make Smarter Financial Decisions</h1>
+          <p className="sub">
+            Expert analysis, practical guides, and market insights from the PataPesa team and industry leaders.
           </p>
-          <a href="#" className="read-more">Read more →</a>
-        </article>
 
-        <article className="blog-card" id="market-insights">
-          <div className="blog-meta">
-            <span className="category">Market Insights</span>
-            <span className="date">December 2025</span>
+          {/* SEARCH BAR */}
+          <div className="blog-search">
+            <input
+              type="search"
+              placeholder="Search articles..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              aria-label="Search blog articles"
+            />
           </div>
-          <h3>2025 Outlook: Money Market Funds vs Treasury Bills</h3>
-          <p>
-            Comparing yields, liquidity, risk, and tax implications for Kenyan investors
-            in the current high-interest environment.
-          </p>
-          <a href="#" className="read-more">Read more →</a>
-        </article>
+        </div>
+      </section>
 
-        <article className="blog-card" id="case-studies">
-          <div className="blog-meta">
-            <span className="category">Case Studies</span>
-            <span className="date">December 2025</span>
+      {/* FEATURED ARTICLE */}
+      {featuredArticle && (
+        <section className="featured-article page-section bg-subtle">
+          <div className="container">
+            <div className="featured-card">
+              <div className="featured-image">
+                <img src={featuredArticle.image} alt={featuredArticle.title} />
+                <span className="category-tag">{featuredArticle.category}</span>
+              </div>
+              <div className="featured-content">
+                <h2>{featuredArticle.title}</h2>
+                <p className="excerpt">{featuredArticle.excerpt}</p>
+                <div className="meta">
+                  <div className="author">
+                    <img src={featuredArticle.authorImg} alt={featuredArticle.author} className="author-avatar" />
+                    <div>
+                      <strong>{featuredArticle.author}</strong>
+                      <span>{featuredArticle.authorRole}</span>
+                    </div>
+                  </div>
+                  <span>{featuredArticle.date} • {featuredArticle.readTime}</span>
+                </div>
+                <Link to={`/blog/${featuredArticle.id}`} className="btn btn-primary">
+                  Read Article →
+                </Link>
+              </div>
+            </div>
           </div>
-          <h3>How a Nairobi SME Reduced Financial Stress for 200 Employees</h3>
-          <p>
-            Real-world implementation of group savings, salary-linked insurance,
-            and wellness coaching through verified providers.
-          </p>
-          <a href="#" className="read-more">Read more →</a>
-        </article>
+        </section>
+      )}
 
-        <article className="blog-card" id="financial-literacy">
-          <div className="blog-meta">
-            <span className="category">Financial Literacy</span>
-            <span className="date">December 2025</span>
-          </div>
-          <h3>Understanding Stablecoins: USDT & USDC in African Contexts</h3>
-          <p>
-            A beginner-friendly explanation of how stablecoins work, their use cases,
-            and safe practices for cross-border and local payments.
-          </p>
-          <a href="#" className="read-more">Read more →</a>
-        </article>
+      {/* FILTERS & CONTENT GRID */}
+      <section className="blog-main page-section">
+        <div className="container">
+          <div className="blog-layout">
+            {/* SIDEBAR - FILTERS + NEWSLETTER */}
+            <aside className="blog-sidebar">
+              <div className="filters">
+                <h3>Filter by Category</h3>
+                <ul className="category-list">
+                  {categories.map(cat => (
+                    <li key={cat}>
+                      <button
+                        className={`filter-btn ${selectedCategory === cat.toLowerCase().replace(/ & /g, "-") ? "active" : ""}`}
+                        onClick={() => setSelectedCategory(cat === "all" ? "all" : cat)}
+                      >
+                        {cat === "all" ? "All Articles" : cat}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-        <article className="blog-card" id="sme-corporate">
-          <div className="blog-meta">
-            <span className="category">SME & Corporate Wellness</span>
-            <span className="date">December 2025</span>
-          </div>
-          <h3>Building a Financial Wellness Program for Your Team</h3>
-          <p>
-            Practical framework for Kenyan businesses to implement affordable,
-            high-impact financial education and access programs.
-          </p>
-          <a href="#" className="read-more">Read more →</a>
-        </article>
+              <div className="newsletter-sidebar">
+                <h3>Get the PataPesa Pulse</h3>
+                <p>Weekly insights on money, markets, and growth — straight to your inbox.</p>
+                <form onSubmit={handleNewsletter}>
+                  <input
+                    type="email"
+                    placeholder="Your email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                  />
+                  <button type="submit" className="btn btn-primary full-width">
+                    Subscribe
+                  </button>
+                </form>
+                {emailSubmitted && <p className="success">Thank you! Check your email to confirm.</p>}
+                <p className="privacy-note">We respect your privacy. Unsubscribe anytime.</p>
+              </div>
+            </aside>
 
-        <article className="blog-card coming-soon">
-          <div className="blog-meta">
-            <span className="category">Coming Soon</span>
+            {/* MAIN CONTENT GRID */}
+            <div className="blog-grid">
+              {filteredArticles.length === 0 ? (
+                <p className="no-results">No articles found matching your search.</p>
+              ) : (
+                filteredArticles.map(article => (
+                  <article key={article.id} className="blog-card">
+                    <div className="card-image">
+                      <img src={article.image} alt={article.title} />
+                      <span className="category-tag">{article.category}</span>
+                    </div>
+                    <div className="card-content">
+                      <h3>{article.title}</h3>
+                      <p>{article.excerpt}</p>
+                      <div className="meta">
+                        <div className="author">
+                          <img src={article.authorImg} alt={article.author} className="author-avatar small" />
+                          <div>
+                            <strong>{article.author}</strong>
+                            <span>{article.authorRole}</span>
+                          </div>
+                        </div>
+                        <span>{article.date} • {article.readTime}</span>
+                      </div>
+                      <Link to={`/blog/${article.id}`} className="read-more">
+                        Read more →
+                      </Link>
+                    </div>
+                  </article>
+                ))
+              )}
+            </div>
           </div>
-          <h3>More Insights on the Way</h3>
-          <p>
-            Subscribe to our updates or follow us for new articles on financial
-            access, provider spotlights, and regulatory changes.
-          </p>
-          <a href="/contact" className="btn btn-primary">Get Notified</a>
-        </article>
-      </div>
-    </section>
+        </div>
+      </section>
+
+      {/* FINAL CTA */}
+      <section className="blog-cta page-section bg-subtle">
+        <div className="container">
+          <h2>Ready to Put These Insights into Action?</h2>
+          <p>Join thousands already accessing better financial services through PataPesa.</p>
+          <div className="cta-buttons">
+            <Link to="/contact" className="btn btn-primary large">Get Started</Link>
+            <Link to="/contact" className="btn btn-secondary large">Create Free Account</Link>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
