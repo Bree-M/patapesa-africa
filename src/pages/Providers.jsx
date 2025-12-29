@@ -283,7 +283,6 @@ export default function Partners() {
                   <td>SMEs & Growing Institutions</td>
                   <td>KES 25,000</td>
                   <td>KES 60,000</td>
-                  <p>Note: All prices are quoted exclusive of 16% VAT. Fees are subject to adjustment in alignment with evolving government tax regulations.</p>
                   <td>Listing, lead routing, basic analytics</td>
                 </tr>
                 <tr className="highlight">
@@ -291,7 +290,6 @@ export default function Partners() {
                   <td>Fintechs & Digital Lenders</td>
                   <td>KES 150,000</td>
                   <td>KES 150,000</td>
-                  <p>Note: All prices are quoted exclusive of 16% VAT. Fees are subject to adjustment in alignment with evolving government tax regulations.</p>
                   <td>Full API access, PesaFlow™ routing, advanced analytics</td>
                 </tr>
                 <tr>
@@ -299,11 +297,13 @@ export default function Partners() {
                   <td>Banks & Enterprises</td>
                   <td>KES 250,000</td>
                   <td>KES 270,000</td>
-                  <p>Note: All prices are quoted exclusive of 16% VAT. Fees are subject to adjustment in alignment with evolving government tax regulations.</p>
                   <td>White-label experience, dedicated support, custom integrations</td>
                 </tr>
               </tbody>
             </table>
+            <p>
+            Note: All prices are quoted exclusive of 16% VAT. Fees are subject to adjustment in alignment with evolving government tax regulations.
+            </p>
           </div>
         </div>
       </section>
