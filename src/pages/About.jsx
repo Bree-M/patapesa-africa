@@ -119,6 +119,7 @@ export default function About() {
                 className="leader-photo"
               />
               <h3>Raphael Kirangu</h3>
+              <p style="color:var(--gold-accent);font-weight:600;margin-bottom:0.5rem;">Founder & CEO</p>
               <p className="role">Founder & CEO</p>
               <p>
               Drives PataPesa's strategic vision and fosters critical partnerships across the Kenyan financial landscape. His focus is on sustainable growth and ensuring our product meets the unique needs of the East African market. </p>
@@ -135,6 +136,7 @@ export default function About() {
             <div className="leader-card">
               <img src="/team-cto.jpg" alt="BW" className="leader-photo" />
               <h3>Brenda Wairimu</h3>
+              <p style="color:var(--gold-accent);font-weight:600;margin-bottom:0.5rem;">Lead Backend Engineer</p>
               <p className="role">Lead Backend Engineer</p>
               <p>Leads the core API development and maintains secure provider integrations. She architected our robust, scalable backend system designed for bank-grade reliability and speed.</p>
               <a
@@ -154,6 +156,7 @@ export default function About() {
                 className="leader-photo"
               />
               <h3>Titus Kiprono</h3>
+              <p style="color:var(--gold-accent);font-weight:600;margin-bottom:0.5rem;">Lead Frontend Engineer</p>
               <p className="role">Lead Frontend Engineer</p>
               <p>
               Responsible for the intuitive app UI/UX and our cutting-edge Progressive Web App (PWA) interface. His focus is on creating a seamless, accessible, and enjoyable user experience for all our customers.
